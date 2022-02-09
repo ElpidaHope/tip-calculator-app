@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Dark-grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan1: hsl(185, 41%, 84%);
+    --Light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono';
+    font-size: 24px;
+    background-color: var(--Light-grayish-cyan1);
+}
+
+.logo {
+    width: 70px;
+    margin: 70px auto 30px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.calculator-container {
+    background-color: var(--White);
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+}
+
+.calculator-inputs h4 {
+    font-size: 0.8rem;
+    color: var(--Very-dark-cyan);
+    font-weight: 700;
+}
+
+.bill, .people {
+    position: relative;
+    height: fit-content;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.bill input, .people input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--Light-grayish-cyan);
+    background-color: var(--Light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    border-radius: 5px;
+    text-align: right;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.bill input:focus, .people input:focus {
+    outline: none;
+    border: 2px solid var(--Strong-cyan);
+}
+
+.bill img, .people img {
+    position: absolute;
+    top: 13px;
+    left: 15px;
+}
+
+.percentages {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    margin: 10px 0 30px;
+}
+
+.percentages input {
+    background-color: var(--Very-dark-cyan);
+    border: 1px solid var(--Very-dark-cyan);
+    color: var(--White);
+    padding: 10px 0;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.percentages input:hover {
+    opacity: 0.7;
+}
+
+input.active {
+    background-color: var(--Strong-cyan);
+    border: 1px solid var(--Strong-cyan);
+}
+
+.percentages input:last-child {
+    max-width: 163px;
+    background-color: var(--Light-grayish-cyan);
+    border: 1px solid var(--Light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    font-weight: 700;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.percentages input:last-child::placeholder {
+    color: var(--Very-dark-cyan);
+    font-weight: 700;
+    text-align: center;
+}
+
+.percentages input:last-child:focus {
+    outline: none;
+    border: 2px solid var(--Strong-cyan);
+}
+
+.people p, .bill p {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: orange;
+    position: absolute;
+    top: -25px;
+    right: 0;
+    visibility: hidden;
+}
+
+.error p {
+    visibility: visible;
+} 
+
+.error input {
+    outline: none;
+    border: 2px solid orange;
+}
+
+.calculator-result {
+    background-color: var(--Very-dark-cyan);
+    border-radius: 10px;
+    padding: 30px 20px 20px;
+}
+
+.tip-amount, .amount-per-person {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calculator-result h4 {
+    font-size: 0.9rem;
+    color: var(--White);
+}
+
+.calculator-result span {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--Light-grayish-cyan1);
+}
+
+.calculator-result h3 {
+    color: var(--Strong-cyan);
+}
+
+.calculator-result button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--Strong-cyan);
+    border: 1px solid var(--Strong-cyan);
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--Very-dark-cyan);
+    opacity: 0.1;
+    cursor: pointer;
+}
+
+.calculator-result button.activated {
+    opacity: 1;
+}
+
+button, input {
+    font-family: 'Space Mono';
+}
+
+@media (min-width:1000px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calculator-container {
+        min-width: 900px;
+        display: flex;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    .calculator-inputs {
+        flex: 50%;
+    }
+
+    .calculator-result {
+        flex: 50%;
+    }
+
+    .percentages {
+        grid-template-columns: repeat(3, 130px);
+    }
+
+    .calculator-result button {
+        margin-top: 140px;
+    }
+
+    .logo {
+        margin-bottom: 60px;
+    }
+    
+}
